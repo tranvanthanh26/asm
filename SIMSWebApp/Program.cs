@@ -19,6 +19,10 @@ namespace SIMSWebApp
             );
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<UserService>();
+            
+            // Đăng ký Student services
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<StudentService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
