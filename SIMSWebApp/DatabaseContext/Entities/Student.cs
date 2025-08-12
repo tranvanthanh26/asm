@@ -6,35 +6,35 @@ namespace SIMSWebApp.DatabaseContext.Entities
     {
         public int StudentID { get; set; }
         
-        [Required(ErrorMessage = "Họ tên là bắt buộc")]
-        [StringLength(100, ErrorMessage = "Họ tên không được vượt quá 100 ký tự")]
+        [Required(ErrorMessage = "Full name is required")]
+        [StringLength(100, ErrorMessage = "Full name cannot exceed 100 characters")]
         public string FullName { get; set; } = null!;
         
-        [Required(ErrorMessage = "Mã học sinh là bắt buộc")]
-        [StringLength(20, ErrorMessage = "Mã học sinh không được vượt quá 20 ký tự")]
+        [Required(ErrorMessage = "Student code is required")]
+        [StringLength(20, ErrorMessage = "Student code cannot exceed 20 characters")]
         public string StudentCode { get; set; } = null!;
         
-        [Required(ErrorMessage = "Ngày sinh là bắt buộc")]
+        [Required(ErrorMessage = "Date of birth is required")]
         public DateTime DateOfBirth { get; set; }
         
-        [Required(ErrorMessage = "Giới tính là bắt buộc")]
+        [Required(ErrorMessage = "Gender is required")]
         public string Gender { get; set; } = null!;
         
-        [Required(ErrorMessage = "Địa chỉ là bắt buộc")]
-        [StringLength(200, ErrorMessage = "Địa chỉ không được vượt quá 200 ký tự")]
+        [Required(ErrorMessage = "Address is required")]
+        [StringLength(200, ErrorMessage = "Address cannot exceed 200 characters")]
         public string Address { get; set; } = null!;
         
-        [Required(ErrorMessage = "Số điện thoại là bắt buộc")]
-        [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
-        [StringLength(15, ErrorMessage = "Số điện thoại không được vượt quá 15 ký tự")]
+        [Required(ErrorMessage = "Phone number is required")]
+        [Phone(ErrorMessage = "Invalid phone number format")]
+        [StringLength(15, ErrorMessage = "Phone number cannot exceed 15 characters")]
         public string PhoneNumber { get; set; } = null!;
         
-        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
-        [StringLength(100, ErrorMessage = "Email không được vượt quá 100 ký tự")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
+        [StringLength(100, ErrorMessage = "Email cannot exceed 100 characters")]
         public string? Email { get; set; }
         
-        [Required(ErrorMessage = "Lớp là bắt buộc")]
-        [StringLength(20, ErrorMessage = "Lớp không được vượt quá 20 ký tự")]
+        [Required(ErrorMessage = "Class is required")]
+        [StringLength(20, ErrorMessage = "Class cannot exceed 20 characters")]
         public string Class { get; set; } = null!;
         
         public DateTime CreatedAt { get; set; } = DateTime.Now;

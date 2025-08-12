@@ -24,7 +24,7 @@ namespace SIMSWebApp.Controllers
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Lỗi khi tải danh sách học sinh: {ex.Message}";
+                TempData["ErrorMessage"] = $"Error loading student list: {ex.Message}";
                 return View(new List<StudentViewModel>());
             }
         }
@@ -45,7 +45,7 @@ namespace SIMSWebApp.Controllers
                 try
                 {
                     await _studentService.CreateStudentAsync(viewModel);
-                    TempData["SuccessMessage"] = "Thêm học sinh thành công!";
+                    TempData["SuccessMessage"] = "Student added successfully!";
                     return RedirectToAction(nameof(Index));
                 }
                 catch (InvalidOperationException ex)
@@ -54,7 +54,7 @@ namespace SIMSWebApp.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", $"Lỗi khi thêm học sinh: {ex.Message}");
+                    ModelState.AddModelError("", $"Error adding student: {ex.Message}");
                 }
             }
             return View(viewModel);
@@ -93,7 +93,7 @@ namespace SIMSWebApp.Controllers
                 try
                 {
                     await _studentService.UpdateStudentAsync(viewModel);
-                    TempData["SuccessMessage"] = "Cập nhật học sinh thành công!";
+                    TempData["SuccessMessage"] = "Student updated successfully!";
                     return RedirectToAction(nameof(Index));
                 }
                 catch (InvalidOperationException ex)
@@ -102,7 +102,7 @@ namespace SIMSWebApp.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", $"Lỗi khi cập nhật học sinh: {ex.Message}");
+                    ModelState.AddModelError("", $"Error updating student: {ex.Message}");
                 }
             }
             return View(viewModel);
@@ -136,16 +136,16 @@ namespace SIMSWebApp.Controllers
                 var result = await _studentService.DeleteStudentAsync(id);
                 if (result)
                 {
-                    TempData["SuccessMessage"] = "Xóa học sinh thành công!";
+                    TempData["SuccessMessage"] = "Student deleted successfully!";
                 }
                 else
                 {
-                    TempData["ErrorMessage"] = "Không thể xóa học sinh. Học sinh không tồn tại.";
+                    TempData["ErrorMessage"] = "Unable to delete student. Student not found.";
                 }
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Lỗi khi xóa học sinh: {ex.Message}";
+                TempData["ErrorMessage"] = $"Error deleting student: {ex.Message}";
             }
 
             return RedirectToAction(nameof(Index));

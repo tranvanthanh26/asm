@@ -30,10 +30,10 @@ namespace SIMSWebApp.Services
 
         public async Task<Student> CreateStudentAsync(StudentViewModel viewModel)
         {
-            // Kiểm tra mã học sinh đã tồn tại chưa
+            // Check if student code already exists
             if (await _studentRepository.StudentCodeExistsAsync(viewModel.StudentCode))
             {
-                throw new InvalidOperationException("Mã học sinh đã tồn tại");
+                throw new InvalidOperationException("Student code already exists");
             }
 
             var student = new Student
@@ -56,15 +56,15 @@ namespace SIMSWebApp.Services
             var existingStudent = await _studentRepository.GetStudentByIdAsync(viewModel.StudentID);
             if (existingStudent == null)
             {
-                throw new InvalidOperationException("Học sinh không tồn tại");
+                throw new InvalidOperationException("Student not found");
             }
 
-            // Kiểm tra mã học sinh có bị trùng với học sinh khác không
+            // Check if student code conflicts with another student
             if (existingStudent.StudentCode != viewModel.StudentCode)
             {
                 if (await _studentRepository.StudentCodeExistsAsync(viewModel.StudentCode))
                 {
-                    throw new InvalidOperationException("Mã học sinh đã tồn tại");
+                    throw new InvalidOperationException("Student code already exists");
                 }
             }
 

@@ -48,7 +48,7 @@ namespace SIMSWebApp.Repositories
         {
             var existingStudent = await _context.Students.FindAsync(student.StudentID);
             if (existingStudent == null)
-                throw new InvalidOperationException("Học sinh không tồn tại");
+                throw new InvalidOperationException("Student not found");
 
             existingStudent.FullName = student.FullName;
             existingStudent.StudentCode = student.StudentCode;

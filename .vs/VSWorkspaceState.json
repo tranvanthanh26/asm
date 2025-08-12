@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\SIMSWebApp",
-    "\\SIMSWebApp\\Controllers",
-    "\\SIMSWebApp\\Properties",
-    "\\SIMSWebApp\\Repositories",
+    "\\SIMSWebApp\\Database",
+    "\\SIMSWebApp\\DatabaseContext",
+    "\\SIMSWebApp\\Database\\Scripts",
     "\\SIMSWebApp\\Services",
     "\\SIMSWebApp\\Views",
     "\\SIMSWebApp\\Views\\Course",
     "\\SIMSWebApp\\Views\\Dashboard",
     "\\SIMSWebApp\\Views\\Home"
   ],
-  "SelectedNode": "\\SIMSWebApp\\Controllers\\CourseController.cs",
+  "SelectedNode": "\\SIMSWebApp\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

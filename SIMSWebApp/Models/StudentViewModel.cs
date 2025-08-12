@@ -6,44 +6,44 @@ namespace SIMSWebApp.Models
     {
         public int StudentID { get; set; }
         
-        [Required(ErrorMessage = "Họ tên là bắt buộc")]
-        [Display(Name = "Họ tên")]
-        [StringLength(100, ErrorMessage = "Họ tên không được vượt quá 100 ký tự")]
+        [Required(ErrorMessage = "Full name is required")]
+        [Display(Name = "Full Name")]
+        [StringLength(100, ErrorMessage = "Full name cannot exceed 100 characters")]
         public string FullName { get; set; } = null!;
         
-        [Required(ErrorMessage = "Mã học sinh là bắt buộc")]
-        [Display(Name = "Mã học sinh")]
-        [StringLength(20, ErrorMessage = "Mã học sinh không được vượt quá 20 ký tự")]
+        [Required(ErrorMessage = "Student code is required")]
+        [Display(Name = "Student Code")]
+        [StringLength(20, ErrorMessage = "Student code cannot exceed 20 characters")]
         public string StudentCode { get; set; } = null!;
         
-        [Required(ErrorMessage = "Ngày sinh là bắt buộc")]
-        [Display(Name = "Ngày sinh")]
+        [Required(ErrorMessage = "Date of birth is required")]
+        [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; } = DateTime.Now.AddYears(-18);
         
-        [Required(ErrorMessage = "Giới tính là bắt buộc")]
-        [Display(Name = "Giới tính")]
+        [Required(ErrorMessage = "Gender is required")]
+        [Display(Name = "Gender")]
         public string Gender { get; set; } = null!;
         
-        [Required(ErrorMessage = "Địa chỉ là bắt buộc")]
-        [Display(Name = "Địa chỉ")]
-        [StringLength(200, ErrorMessage = "Địa chỉ không được vượt quá 200 ký tự")]
+        [Required(ErrorMessage = "Address is required")]
+        [Display(Name = "Address")]
+        [StringLength(200, ErrorMessage = "Address cannot exceed 200 characters")]
         public string Address { get; set; } = null!;
         
-        [Required(ErrorMessage = "Số điện thoại là bắt buộc")]
-        [Display(Name = "Số điện thoại")]
-        [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
-        [StringLength(15, ErrorMessage = "Số điện thoại không được vượt quá 15 ký tự")]
+        [Required(ErrorMessage = "Phone number is required")]
+        [Display(Name = "Phone Number")]
+        [Phone(ErrorMessage = "Invalid phone number format")]
+        [StringLength(15, ErrorMessage = "Phone number cannot exceed 15 characters")]
         public string PhoneNumber { get; set; } = null!;
         
         [Display(Name = "Email")]
-        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
-        [StringLength(100, ErrorMessage = "Email không được vượt quá 100 ký tự")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
+        [StringLength(100, ErrorMessage = "Email cannot exceed 100 characters")]
         public string? Email { get; set; }
         
-        [Required(ErrorMessage = "Lớp là bắt buộc")]
-        [Display(Name = "Lớp")]
-        [StringLength(20, ErrorMessage = "Lớp không được vượt quá 20 ký tự")]
+        [Required(ErrorMessage = "Class is required")]
+        [Display(Name = "Class")]
+        [StringLength(20, ErrorMessage = "Class cannot exceed 20 characters")]
         public string Class { get; set; } = null!;
         
         public DateTime CreatedAt { get; set; }

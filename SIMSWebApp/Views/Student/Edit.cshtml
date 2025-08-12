@@ -1,22 +1,22 @@
 @model SIMSWebApp.Models.StudentViewModel
 
 @{
-    ViewData["Title"] = "Chỉnh sửa học sinh";
+    ViewData["Title"] = "Edit Student";
     Layout = "_LayoutMain";
 }
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Chỉnh sửa học sinh</h1>
+    <h1 class="mt-4">Edit Student</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="/Dashboard">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="/Student">Học sinh</a></li>
-        <li class="breadcrumb-item active">Chỉnh sửa</li>
+        <li class="breadcrumb-item"><a href="/Student">Students</a></li>
+        <li class="breadcrumb-item active">Edit</li>
     </ol>
 
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-user-edit me-1"></i>
-            Thông tin học sinh - @Model.FullName
+            Student Information - @Model.FullName
         </div>
         <div class="card-body">
             <form asp-action="Edit" method="post">
@@ -28,14 +28,14 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label asp-for="FullName" class="form-label"></label>
-                            <input asp-for="FullName" class="form-control" placeholder="Nhập họ tên học sinh" />
+                            <input asp-for="FullName" class="form-control" placeholder="Enter student full name" />
                             <span asp-validation-for="FullName" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label asp-for="StudentCode" class="form-label"></label>
-                            <input asp-for="StudentCode" class="form-control" placeholder="Nhập mã học sinh" />
+                            <input asp-for="StudentCode" class="form-control" placeholder="Enter student code" />
                             <span asp-validation-for="StudentCode" class="text-danger"></span>
                         </div>
                     </div>
@@ -53,10 +53,10 @@
                         <div class="mb-3">
                             <label asp-for="Gender" class="form-label"></label>
                             <select asp-for="Gender" class="form-select">
-                                <option value="">-- Chọn giới tính --</option>
-                                <option value="Nam">Nam</option>
-                                <option value="Nữ">Nữ</option>
-                                <option value="Khác">Khác</option>
+                                <option value="">-- Select Gender --</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
                             </select>
                             <span asp-validation-for="Gender" class="text-danger"></span>
                         </div>
@@ -67,14 +67,14 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label asp-for="PhoneNumber" class="form-label"></label>
-                            <input asp-for="PhoneNumber" class="form-control" placeholder="Nhập số điện thoại" />
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
                             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control" placeholder="Nhập email (không bắt buộc)" />
+                            <input asp-for="Email" class="form-control" placeholder="Enter email (optional)" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                     </div>
@@ -84,14 +84,14 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label asp-for="Class" class="form-label"></label>
-                            <input asp-for="Class" class="form-control" placeholder="Nhập lớp" />
+                            <input asp-for="Class" class="form-control" placeholder="Enter class" />
                             <span asp-validation-for="Class" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label asp-for="Address" class="form-label"></label>
-                            <textarea asp-for="Address" class="form-control" rows="3" placeholder="Nhập địa chỉ"></textarea>
+                            <textarea asp-for="Address" class="form-control" rows="3" placeholder="Enter address"></textarea>
                             <span asp-validation-for="Address" class="text-danger"></span>
                         </div>
                     </div>
@@ -100,14 +100,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label class="form-label">Ngày tạo</label>
+                            <label class="form-label">Created Date</label>
                             <input value="@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")" class="form-control" readonly />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label class="form-label">Cập nhật lần cuối</label>
-                            <input value="@(Model.UpdatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "Chưa cập nhật")" class="form-control" readonly />
+                            <label class="form-label">Last Updated</label>
+                            <input value="@(Model.UpdatedAt?.ToString("dd/MM/yyyy HH:mm") ?? "Not updated yet")" class="form-control" readonly />
                         </div>
                     </div>
                 </div>
@@ -115,18 +115,14 @@
                 <div class="d-flex justify-content-between">
                     <a asp-action="Index" class="btn btn-secondary">
                         <i class="fas fa-arrow-left me-1"></i>
-                        Quay lại
+                        Back
                     </a>
                     <button type="submit" class="btn btn-warning">
                         <i class="fas fa-save me-1"></i>
-                        Cập nhật
+                        Update
                     </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

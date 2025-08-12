@@ -1,18 +1,18 @@
--- Script tạo bảng Students cho SIMS Database
--- Chạy script này trong SQL Server Management Studio 20
+-- Script to create Students table for SIMS Database
+-- Run this script in SQL Server Management Studio 20
 
 USE [SIMS]
 GO
 
--- Kiểm tra và xóa bảng nếu đã tồn tại
+-- Check and drop table if exists
 IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Students]') AND type in (N'U'))
 BEGIN
     DROP TABLE [dbo].[Students]
-    PRINT 'Đã xóa bảng Students cũ'
+    PRINT 'Old Students table dropped'
 END
 GO
 
--- Tạo bảng Students
+-- Create Students table
 CREATE TABLE [dbo].[Students](
     [StudentID] [int] IDENTITY(1,1) NOT NULL,
     [FullName] [nvarchar](100) NOT NULL,
@@ -30,43 +30,43 @@ CREATE TABLE [dbo].[Students](
 )
 GO
 
--- Tạo index unique cho StudentCode
+-- Create unique index for StudentCode
 CREATE UNIQUE NONCLUSTERED INDEX [IX_Students_StudentCode] ON [dbo].[Students]
 (
     [StudentCode] ASC
 ) WHERE ([IsActive] = 1)
 GO
 
--- Tạo index cho FullName để tìm kiếm nhanh
+-- Create index for FullName for fast search
 CREATE NONCLUSTERED INDEX [IX_Students_FullName] ON [dbo].[Students]
 (
     [FullName] ASC
 ) WHERE ([IsActive] = 1)
 GO
 
--- Tạo index cho Class để lọc theo lớp
+-- Create index for Class for filtering
 CREATE NONCLUSTERED INDEX [IX_Students_Class] ON [dbo].[Students]
 (
     [Class] ASC
 ) WHERE ([IsActive] = 1)
 GO
 
--- Thêm dữ liệu mẫu
+-- Add sample data
 INSERT INTO [dbo].[Students] ([FullName], [StudentCode], [DateOfBirth], [Gender], [Address], [PhoneNumber], [Email], [Class])
 VALUES 
-    (N'Nguyễn Văn An', 'AN2024001', '2006-05-15', N'Nam', N'123 Đường ABC, Quận 1, TP.HCM', '0901234567', 'an.nguyen@email.com', N'10A1'),
-    (N'Trần Thị Bình', 'BI2024002', '2006-08-22', N'Nữ', N'456 Đường XYZ, Quận 2, TP.HCM', '0901234568', 'binh.tran@email.com', N'10A1'),
-    (N'Lê Văn Cường', 'CU2024003', '2006-03-10', N'Nam', N'789 Đường DEF, Quận 3, TP.HCM', '0901234569', 'cuong.le@email.com', N'10A2'),
-    (N'Phạm Thị Dung', 'DU2024004', '2006-11-05', N'Nữ', N'321 Đường GHI, Quận 4, TP.HCM', '0901234570', 'dung.pham@email.com', N'10A2'),
-    (N'Hoàng Văn Em', 'EM2024005', '2006-07-18', N'Nam', N'654 Đường JKL, Quận 5, TP.HCM', '0901234571', 'em.hoang@email.com', N'10A3'),
-    (N'Vũ Thị Phương', 'PH2024006', '2006-09-30', N'Nữ', N'987 Đường MNO, Quận 6, TP.HCM', '0901234572', 'phuong.vu@email.com', N'10A3'),
-    (N'Đặng Văn Giang', 'GI2024007', '2006-01-12', N'Nam', N'147 Đường PQR, Quận 7, TP.HCM', '0901234573', 'giang.dang@email.com', N'10A4'),
-    (N'Bùi Thị Hoa', 'HO2024008', '2006-04-25', N'Nữ', N'258 Đường STU, Quận 8, TP.HCM', '0901234574', 'hoa.bui@email.com', N'10A4'),
-    (N'Ngô Văn Inh', 'IN2024009', '2006-06-08', N'Nam', N'369 Đường VWX, Quận 9, TP.HCM', '0901234575', 'inh.ngo@email.com', N'10A5'),
-    (N'Lý Thị Kim', 'KI2024010', '2006-12-14', N'Nữ', N'741 Đường YZA, Quận 10, TP.HCM', '0901234576', 'kim.ly@email.com', N'10A5')
+    (N'John Smith', 'SM2024001', '2006-05-15', N'Male', N'123 ABC Street, District 1, HCMC', '0901234567', 'john.smith@email.com', N'10A1'),
+    (N'Jane Doe', 'DO2024002', '2006-08-22', N'Female', N'456 XYZ Street, District 2, HCMC', '0901234568', 'jane.doe@email.com', N'10A1'),
+    (N'Mike Johnson', 'JO2024003', '2006-03-10', N'Male', N'789 DEF Street, District 3, HCMC', '0901234569', 'mike.johnson@email.com', N'10A2'),
+    (N'Sarah Wilson', 'WI2024004', '2006-11-05', N'Female', N'321 GHI Street, District 4, HCMC', '0901234570', 'sarah.wilson@email.com', N'10A2'),
+    (N'David Brown', 'BR2024005', '2006-07-18', N'Male', N'654 JKL Street, District 5, HCMC', '0901234571', 'david.brown@email.com', N'10A3'),
+    (N'Emily Davis', 'DA2024006', '2006-09-30', N'Female', N'987 MNO Street, District 6, HCMC', '0901234572', 'emily.davis@email.com', N'10A3'),
+    (N'Robert Miller', 'MI2024007', '2006-01-12', N'Male', N'147 PQR Street, District 7, HCMC', '0901234573', 'robert.miller@email.com', N'10A4'),
+    (N'Lisa Garcia', 'GA2024008', '2006-04-25', N'Female', N'258 STU Street, District 8, HCMC', '0901234574', 'lisa.garcia@email.com', N'10A4'),
+    (N'Thomas Rodriguez', 'RO2024009', '2006-06-08', N'Male', N'369 VWX Street, District 9, HCMC', '0901234575', 'thomas.rodriguez@email.com', N'10A5'),
+    (N'Maria Martinez', 'MA2024010', '2006-12-14', N'Female', N'741 YZA Street, District 10, HCMC', '0901234576', 'maria.martinez@email.com', N'10A5')
 GO
 
--- Hiển thị thông tin bảng đã tạo
+-- Display table structure information
 SELECT 
     TABLE_NAME,
     COLUMN_NAME,
@@ -78,9 +78,9 @@ WHERE TABLE_NAME = 'Students'
 ORDER BY ORDINAL_POSITION
 GO
 
--- Hiển thị dữ liệu mẫu
+-- Display sample data
 SELECT * FROM [dbo].[Students] ORDER BY [StudentID]
 GO
 
-PRINT 'Đã tạo thành công bảng Students với dữ liệu mẫu!'
+PRINT 'Students table created successfully with sample data!'
 GO
