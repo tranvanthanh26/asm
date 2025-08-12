@@ -23,9 +23,12 @@
                         <a class="nav-link" href="@Url.Action("Index", "Student")">
                             <i class="fas fa-list me-2"></i>Student List
                         </a>
-                        <a class="nav-link" href="@Url.Action("Create", "Student")">
-                            <i class="fas fa-plus me-2"></i>Add New Student
-                        </a>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="nav-link" href="@Url.Action("Create", "Student")">
+                                <i class="fas fa-plus me-2"></i>Add New Student
+                            </a>
+                        }
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -35,12 +38,15 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link collapsed" href="@Url.Action("Index", "Course")">
+                        <a class="nav-link" href="@Url.Action("Index", "Course")">
                             <i class="fas fa-list me-2"></i>Course List
                         </a>
-                        <a class="nav-link collapsed" href="@Url.Action("Create", "Course")">
-                            <i class="fas fa-plus me-2"></i>Add New Course
-                        </a>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="nav-link" href="@Url.Action("Create", "Course")">
+                                <i class="fas fa-plus me-2"></i>Add New Course
+                            </a>
+                        }
                     </nav>
                 </div>
             </div>

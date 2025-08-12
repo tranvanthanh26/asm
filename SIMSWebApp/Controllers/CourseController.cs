@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SIMSWebApp.Models;
 using SIMSWebApp.Services;
 
 namespace SIMSWebApp.Controllers
 {
+    [Authorize(Roles = "Admin,Student")]
     public class CourseController : Controller
     {
         private readonly CourseService _courseService;
@@ -30,6 +32,7 @@ namespace SIMSWebApp.Controllers
         }
 
         // GET: Course/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View(new CourseViewModel());
@@ -37,6 +40,7 @@ namespace SIMSWebApp.Controllers
 
         // POST: Course/Create
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CourseName,CourseCode,Credits,Duration,Description,Department,Instructor,Semester,AcademicYear,MaxStudents,Fee")] CourseViewModel viewModel)
         {
@@ -61,6 +65,7 @@ namespace SIMSWebApp.Controllers
         }
 
         // GET: Course/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,6 +85,7 @@ namespace SIMSWebApp.Controllers
 
         // POST: Course/Edit/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CourseID,CourseName,CourseCode,Credits,Duration,Description,Department,Instructor,Semester,AcademicYear,MaxStudents,Fee")] CourseViewModel viewModel)
         {
@@ -128,6 +134,7 @@ namespace SIMSWebApp.Controllers
 
         // POST: Course/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
