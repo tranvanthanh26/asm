@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{64B161E6-8259-4D78-A53C-FEBD44468A8D}|SIMSWebApp\\SIMSWebApp.csproj|solutionrelative:simswebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64B161E6-8259-4D78-A53C-FEBD44468A8D}|SIMSWebApp\\SIMSWebApp.csproj|c:\\data\\asm\\simswebapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{64B161E6-8259-4D78-A53C-FEBD44468A8D}|SIMSWebApp\\SIMSWebApp.csproj|solutionrelative:simswebapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{64B161E6-8259-4D78-A53C-FEBD44468A8D}|SIMSWebApp\\SIMSWebApp.csproj|c:\\data\\asm\\simswebapp\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64B161E6-8259-4D78-A53C-FEBD44468A8D}|SIMSWebApp\\SIMSWebApp.csproj|solutionrelative:simswebapp\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,23 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\data\\asm\\SIMSWebApp\\appsettings.json",
-              "RelativeDocumentMoniker": "SIMSWebApp\\appsettings.json",
-              "ToolTip": "C:\\data\\asm\\SIMSWebApp\\appsettings.json",
-              "RelativeToolTip": "SIMSWebApp\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-11T16:11:19.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\data\\asm\\SIMSWebApp\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "SIMSWebApp\\Models\\LoginViewModel.cs",
@@ -62,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\data\\asm\\SIMSWebApp\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "SIMSWebApp\\Models\\ErrorViewModel.cs",
@@ -87,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CourseController.cs",
               "DocumentMoniker": "C:\\data\\asm\\SIMSWebApp\\Controllers\\CourseController.cs",
               "RelativeDocumentMoniker": "SIMSWebApp\\Controllers\\CourseController.cs",
@@ -99,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\data\\asm\\SIMSWebApp\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "SIMSWebApp\\Controllers\\AuthController.cs",
