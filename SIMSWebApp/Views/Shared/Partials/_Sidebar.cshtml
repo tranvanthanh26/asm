@@ -36,12 +36,10 @@
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                         <a class="nav-link collapsed" href="@Url.Action("Index", "Course")">
-                            Courses Lists
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <i class="fas fa-list me-2"></i>Course List
                         </a>
-                        <a class="nav-link collapsed" href="#">
-                            Add Student To Course
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        <a class="nav-link collapsed" href="@Url.Action("Create", "Course")">
+                            <i class="fas fa-plus me-2"></i>Add New Course
                         </a>
                     </nav>
                 </div>
