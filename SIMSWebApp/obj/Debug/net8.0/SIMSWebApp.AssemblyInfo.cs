@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SIMSWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4385cf554a784a3b8a809965b2117f30641efba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94dd69bb7cdb6ae5d0fee92f77436d70ade7819d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SIMSWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SIMSWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
